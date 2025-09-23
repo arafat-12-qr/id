@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Md. Arafat — Profile</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#0ea5a4;--muted:#94a3b8;--glass: rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:#e6eef6;background:linear-gradient(180deg,#071230 0%, #071828 60%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+    .container{width:100%;max-width:980px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:26px;box-shadow:0 10px 30px rgba(2,6,23,0.7);border:1px solid rgba(255,255,255,0.03)}
+    .header{display:flex;gap:20px;align-items:center}
+    .avatar{width:110px;height:110px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0369a1);display:flex;align-items:center;justify-content:center;color:#072038;font-weight:700;font-size:28px;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+    .title h1{margin:0;font-size:22px;letter-spacing:0.2px}
+    .title p{margin:4px 0 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr} .header{flex-direction:row}}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .card h2{margin:0 0 12px 0;font-size:16px}
+    .info-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .info-item{background:var(--glass);padding:10px;border-radius:8px}
+    .info-item b{display:block;color:var(--muted);font-size:12px}
+    .info-item span{display:block;margin-top:6px;font-size:14px}
+
+    .actions{display:flex;gap:8px;margin-top:14px}
+    .btn{padding:8px 12px;border-radius:8px;border:0;cursor:pointer;background:var(--accent);color:#042022;font-weight:600}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .right .contact{display:flex;flex-direction:column;gap:10px}
+    .contact a{display:block;text-decoration:none;padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    [contenteditable]{outline:2px dashed transparent}
+    [contenteditable]:focus{outline:2px dashed rgba(14,165,164,0.6);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    .hint{font-size:12px;color:var(--muted);margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="avatar">
+        <img src="112233.png" alt="Md. Arafat Photo">
+      </div>
+      <div class="title">
+        <h1 contenteditable="true" id="name">Md. Arafat</h1>
+        <p contenteditable="true" id="tagline">Diploma in ICT student — National Institute of Youth Development</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2>Profile</h2>
+          <p contenteditable="true" id="about">Hi — this is a simple profile page. You can edit text directly on the page. Add your education, skills, projects, or anything else below.</p>
+
+          <h2 style="margin-top:16px">Details</h2>
+          <div class="info-list">
+            <div class="info-item"><b>Roll No</b><span contenteditable="true" id="roll">12</span></div>
+            <div class="info-item"><b>Department</b><span contenteditable="true" id="dept">Diploma in ICT</span></div>
+            <div class="info-item"><b>Institute</b><span contenteditable="true" id="inst">National Institute of Youth Development</span></div>
+            <div class="info-item"><b>Blood Group</b><span contenteditable="true" id="blood">B+ Ve</span></div>
+            <div class="info-item"><b>Address</b><span contenteditable="true" id="addr">Savar, Dhaka</span></div>
+            <div class="info-item"><b>Mobile</b><span contenteditable="true" id="mobile">+880 1768-140897</span></div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" id="saveBtn">Save to file</button>
+            <button class="btn secondary" id="resetBtn">Reset placeholder</button>
+          </div>
+
+          <p class="hint">Tip: click any text to edit. Use <strong>Save to file</strong> to download an updated HTML copy.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2>More sections (add as you like)</h2>
+          <p contenteditable="true">• Education<br>• Skills<br>• Projects<br>• Certificates<br>• Social links</p>
+        </div>
+      </div>
+
+      <aside class="right">
+        <div class="card contact">
+          <h2>Contact</h2>
+          <a href="#" id="phoneLink">Call: <span id="phoneDisplay">+880 1768-140897</span></a>
+          <a href="#" id="addressDisplay">Address: Savar, Dhaka</a>
+          <a href="#" id="instituteLink">National Institute of Youth Development</a>
+        </div>
+
+        <div class="card" style="margin-top:12px; text-align:center">
+          <h2>Quick actions</h2>
+          <button class="btn" onclick="window.print()">Print</button>
+        </div>
+      </aside>
+    </div>
+
+    <footer>Made with ♥ — editable HTML file. Save and open in your browser or put in a localhost folder (htdocs) to run with XAMPP.</footer>
+  </div>
+
+  <script>
+    const mobileEl = document.getElementById('mobile');
+    const phoneDisplay = document.getElementById('phoneDisplay');
+    const phoneLink = document.getElementById('phoneLink');
+    const addrEl = document.getElementById('addr');
+    const addressDisplay = document.getElementById('addressDisplay');
+
+    function refreshContacts(){
+      phoneDisplay.textContent = mobileEl.textContent.trim();
+      phoneLink.href = 'tel:' + mobileEl.textContent.trim().replace(/[^+0-9]/g, '');
+      addressDisplay.textContent = 'Address: ' + addrEl.textContent.trim();
+    }
+
+    refreshContacts();
+
+    const obs = new MutationObserver(refreshContacts);
+    obs.observe(mobileEl, {characterData:true, subtree:true, childList:true});
+    obs.observe(addrEl, {characterData:true, subtree:true, childList:true});
+
+    document.getElementById('saveBtn').addEventListener('click', ()=>{
+      const doc = '<!doctype html>' + '\n' + document.documentElement.outerHTML;
+      const blob = new Blob([doc], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'md_arafat_profile.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', ()=>{
+      if(!confirm('Reset the editable fields to simple placeholders?')) return;
+      document.getElementById('name').textContent = 'Your Name';
+      document.getElementById('tagline').textContent = 'Course / Tagline';
+      document.getElementById('about').textContent = 'Short description about you.';
+      document.getElementById('roll').textContent = '—';
+      document.getElementById('dept').textContent = '—';
+      document.getElementById('inst').textContent = '—';
+      document.getElementById('blood').textContent = '—';
+      document.getElementById('addr').textContent = '—';
+      document.getElementById('mobile').textContent = '—';
+      refreshContacts();
+    });
+  </script>
+</body>
+</html>
